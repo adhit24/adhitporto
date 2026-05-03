@@ -1,5 +1,6 @@
 import { AboutSection } from './sections/AboutSection'
 import { AboutMeStackSection } from './sections/AboutMeStackSection'
+import { FooterSection } from './sections/FooterSection'
 import { HeroSection } from './sections/HeroSection'
 import { MarqueeSection } from './sections/MarqueeSection'
 import { ProjectsSection } from './sections/ProjectsSection'
@@ -16,6 +17,7 @@ export default function App() {
       <TimelineSection />
       <ServicesSection />
       <ProjectsSection />
+      <FooterSection />
     </main>
   )
 }
