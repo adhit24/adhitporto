@@ -1,0 +1,82 @@
+import { FadeIn } from '../components/FadeIn'
+import { ContactButton } from '../components/ContactButton'
+import { Magnet } from '../components/Magnet'
+
+const portraitUrl = '/avatar.png'
+
+export function HeroSection() {
+  return (
+    <section className="relative flex h-screen flex-col overflow-x-clip">
+      <FadeIn
+        as="nav"
+        delay={0}
+        y={-20}
+        className="flex items-center justify-between px-6 pt-6 text-sm font-medium uppercase tracking-wider text-[#D7E2EA] sm:text-base md:px-10 md:pt-8 md:text-lg lg:text-[1.4rem]"
+      >
+        <a href="#about" className="transition-opacity duration-200 hover:opacity-70">
+          About
+        </a>
+        <a href="#price" className="transition-opacity duration-200 hover:opacity-70">
+          Price
+        </a>
+        <a href="#projects" className="transition-opacity duration-200 hover:opacity-70">
+          Projects
+        </a>
+        <a
+          href="mailto:adhit24@gmail.com"
+          className="transition-opacity duration-200 hover:opacity-70"
+        >
+          Contact
+        </a>
+      </FadeIn>
+
+      <div className="relative flex flex-1 flex-col">
+        <FadeIn delay={0.15} y={40} className="mt-6 w-full overflow-hidden sm:mt-4 md:-mt-5">
+          <h1 className="hero-heading w-full whitespace-nowrap text-[14vw] font-black uppercase leading-none tracking-tight sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]">
+            Hi, i&apos;m adhit
+          </h1>
+        </FadeIn>
+
+        <FadeIn
+          delay={0.6}
+          y={30}
+          className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
+        >
+          <div className="pointer-events-auto w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
+            <Magnet
+              padding={150}
+              strength={3}
+              activeTransition="transform 0.3s ease-out"
+              inactiveTransition="transform 0.6s ease-in-out"
+            >
+              <div className="flex items-center justify-center">
+                <img
+                  src={portraitUrl}
+                  alt="Avatar"
+                  className="block h-auto w-full select-none object-contain object-center"
+                />
+              </div>
+            </Magnet>
+          </div>
+        </FadeIn>
+
+        <div className="mt-auto px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
+          <div className="flex items-end justify-between">
+            <FadeIn
+              delay={0.35}
+              y={20}
+              as="p"
+              className="max-w-[160px] text-[#D7E2EA] [font-size:clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase tracking-wide leading-snug sm:max-w-[220px] md:max-w-[260px]"
+            >
+              I build scalable brands, digital systems &amp; meaningful experiences.
+            </FadeIn>
+
+            <FadeIn delay={0.5} y={20}>
+              <ContactButton href="mailto:adhit24@gmail.com" />
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

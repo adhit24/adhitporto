@@ -1,0 +1,114 @@
+import { motion, type MotionValue, useTransform } from 'framer-motion'
+import type { ReactNode } from 'react'
+
+export type AboutMeCardData = {
+  number: string
+  category: string
+  name: string
+  summary: string
+  highlights: string[]
+  images?: {
+    col1: [string, string]
+    col2: string
+  }
+  customImages?: ReactNode
+}
+
+export function AboutMeCard({
+  card,
+  index,
+  totalCards,
+  progress,
+}: {
+  card: AboutMeCardData
+  index: number
+  totalCards: number
+  progress: MotionValue<number>
+}) {
+  const rangeStart = index / totalCards
+  const rangeEnd = 1
+  const targetScale = 1 - (totalCards - 1 - index) * 0.03
+  const scale = useTransform(progress, [rangeStart, rangeEnd], [1, targetScale])
+
+  return (
+    <div
+      className="sticky top-24 flex h-[85vh] w-full items-start justify-center md:top-32"
+      style={{ zIndex: index + 1 }}
+    >
+      <motion.div
+        style={{
+          scale,
+          top: `${index * 28}px`,
+          backgroundColor: '#0C0C0C',
+          willChange: 'transform',
+        }}
+        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top rounded-[40px] border-2 border-[#D7E2EA] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+      >
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex items-baseline gap-4">
+            <div className="[font-size:clamp(3rem,10vw,140px)] font-black leading-none text-[#D7E2EA]">
+              {card.number}
+            </div>
+            <div className="flex flex-col gap-1 pt-2">
+              <div className="text-xs font-medium uppercase tracking-widest text-[#D7E2EA]/70">
+                {card.category}
+              </div>
+              <div className="text-lg font-medium uppercase tracking-wide text-[#D7E2EA] sm:text-2xl md:text-3xl">
+                {card.name}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 grid gap-4 md:mt-6 md:grid-cols-5 md:gap-6">
+          <div className="md:col-span-2">
+            <div className="text-[#D7E2EA] [font-size:clamp(0.95rem,1.5vw,1.2rem)] font-medium leading-relaxed">
+              {card.summary}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {card.highlights.map((h) => (
+                <span
+                  key={h}
+                  className="rounded-full border border-[#D7E2EA]/25 px-3 py-1 text-xs font-medium uppercase tracking-widest text-[#D7E2EA]/85"
+                >
+                  {h}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="md:col-span-3">
+            {card.customImages ? (
+              card.customImages
+            ) : card.images ? (
+              <div className="grid grid-cols-5 gap-4 sm:gap-6">
+                <div className="col-span-2 flex flex-col gap-4 sm:gap-6">
+                  <img
+                    src={card.images.col1[0]}
+                    alt=""
+                    loading="lazy"
+                    className="h-[clamp(130px,16vw,230px)] w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+                  />
+                  <img
+                    src={card.images.col1[1]}
+                    alt=""
+                    loading="lazy"
+                    className="h-[clamp(160px,22vw,340px)] w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+                  />
+                </div>
+                <div className="col-span-3">
+                  <img
+                    src={card.images.col2}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+                  />
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  )
+}
