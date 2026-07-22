@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Instagram, Github } from 'lucide-react'
+import { Mail, Linkedin, Instagram, Github, MessageCircle } from 'lucide-react'
 import { FadeIn } from '../components/FadeIn'
 
 const socialLinks = [
@@ -7,6 +7,7 @@ const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/adhit24',            label: 'Instagram' },
   { icon: Mail,      href: 'mailto:adhit24@gmail.com',                 label: 'Email' },
   { icon: Github,    href: 'https://github.com/adhit24',               label: 'GitHub' },
+  { icon: MessageCircle, href: 'https://wa.me/6281357662424',                label: 'WhatsApp' },
 ]
 
 const marqueeText =
