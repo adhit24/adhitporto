@@ -15,6 +15,9 @@ export function ProjectsSection() {
         number: '01',
         category: 'Client',
         name: 'Website RedBox',
+        problem: 'Needed a sharper online presence for barbershop discovery and trust.',
+        built: 'Responsive brand website with service-focused layout and direct contact flow.',
+        result: 'Clearer first impression and easier path from browsing to booking intent.',
         href: 'https://www.redboxbarbershop.com/',
         images: {
           col1: ['/redbox1st.png', '/redbok_LP.png'],
@@ -25,6 +28,9 @@ export function ProjectsSection() {
         number: '02',
         category: 'Personal',
         name: 'Raskop Website',
+        problem: 'Coffee brand needed a digital home for menu, branches, and brand story.',
+        built: 'Website experience for Rasa Kopi with visual identity and customer touchpoints.',
+        result: 'Stronger online presence for daily discovery and branch expansion.',
         href: 'https://raskop.net',
         images: {
           col1: ['/raskopfront.png', '/Story_4.JPG'],
@@ -35,6 +41,9 @@ export function ProjectsSection() {
         number: '03',
         category: 'Client',
         name: 'Ginabo E-commerce',
+        problem: 'Product brand needed a cleaner commerce presentation and brand credibility.',
+        built: 'E-commerce style website with product highlights and conversion-oriented sections.',
+        result: 'A more focused digital storefront for customers and campaign traffic.',
         underDevelopment: true,
         href: 'https://www.ginabo.id/',
         images: {
@@ -46,6 +55,9 @@ export function ProjectsSection() {
         number: '04',
         category: 'Client',
         name: 'Website + CRM Oxigen Coffee',
+        problem: 'F&B operation needed a stronger website and customer relationship flow.',
+        built: 'Website concept with CRM direction for customer data and repeat engagement.',
+        result: 'Prepared foundation for digital operations and customer retention.',
         underDevelopment: true,
         images: {
           col1: ['/oksi3.png', '/oksi2.jpg'],
@@ -56,6 +68,9 @@ export function ProjectsSection() {
         number: '05',
         category: 'Client',
         name: 'Website + CRM Belly Bites Coffee Bistro',
+        problem: 'Cafe brand needed a more structured digital presence and customer system.',
+        built: 'Website and CRM concept for menu, brand story, and customer follow-up.',
+        result: 'Clearer path for brand discovery and future CRM activation.',
         underDevelopment: true,
         images: {
           col1: ['/belly1.jpg', '/belly2.jpg'],
@@ -66,6 +81,9 @@ export function ProjectsSection() {
         number: '06',
         category: 'Client',
         name: 'Website + Reservation Bilik Kita Coffee & Resto',
+        problem: 'Restaurant concept needed a reservation-ready customer journey.',
+        built: 'Website concept with reservation flow and venue-focused presentation.',
+        result: 'Reduced friction between browsing, choosing, and planning a visit.',
         underDevelopment: true,
         href: 'https://bilik-kita.vercel.app/',
         images: {
@@ -80,6 +98,9 @@ export function ProjectsSection() {
         number: '07',
         category: 'Personal',
         name: 'Rasakopi New Branch Cirebon',
+        problem: 'New branch planning needed visual direction and operational framing.',
+        built: 'Concept visuals and digital presentation for branch expansion.',
+        result: 'Sharper expansion story for planning, promotion, and stakeholder alignment.',
         underDevelopment: true,
         images: {
           col1: ['/raskop-branch-1.jpg', '/raskop-branch-2.jpg'],
@@ -90,6 +111,9 @@ export function ProjectsSection() {
         number: '08',
         category: 'Personal',
         name: 'Healthcare Concept',
+        problem: 'Healthcare service concept needed a clean and trustworthy digital direction.',
+        built: 'Website concept with modern visual system and patient-friendly structure.',
+        result: 'A calmer brand foundation for future health service presentation.',
         underDevelopment: true,
         images: {
           col1: [
@@ -107,7 +131,7 @@ export function ProjectsSection() {
     <section
       id="projects"
       ref={containerRef}
-      className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pt-20 pb-[60vh] md:pb-[20vh] sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
+      className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pt-20 pb-24 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pb-[90vh]"
     >
       <h2 className="hero-heading mb-10 text-center [font-size:clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight sm:mb-14 md:mb-20">
         Project

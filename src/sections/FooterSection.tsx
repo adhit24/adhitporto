@@ -17,7 +17,7 @@ export function FooterSection() {
   return (
     <>
       {/* ── CTA / Closing Section ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#0C0C0C] px-5 pt-24 pb-0 sm:px-8 sm:pt-32 md:px-10 md:pt-40">
+      <section className="relative z-20 overflow-hidden bg-[#0C0C0C] px-5 pt-24 pb-0 sm:px-8 sm:pt-32 md:px-10 md:pt-40">
 
         {/* Ghost background text */}
         <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none overflow-hidden">
@@ -87,7 +87,7 @@ export function FooterSection() {
       </section>
 
       {/* ── Footer ────────────────────────────────────────────────────────── */}
-      <footer className="bg-[#0C0C0C] px-5 pt-12 pb-12 text-center sm:px-8 md:px-10">
+      <footer className="relative z-20 bg-[#0C0C0C] px-5 pt-12 pb-12 text-center sm:px-8 md:px-10">
 
         <FadeIn delay={0} y={20}>
           <h3 className="mb-8 [font-size:clamp(1.8rem,6vw,5rem)] font-black uppercase text-[#D7E2EA]">

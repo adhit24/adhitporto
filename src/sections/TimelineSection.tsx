@@ -12,6 +12,7 @@ const items: TimelineItem[] = [
   {
     range: '2026',
     role: 'General Skill — HSSE Department, PT. Koin Pratama',
+    href: 'http://www.ptkoin.com/en/koin.html',
     detail:
       'Assigned to the Major Overhaul PLTU Kanci project, supporting HSSE administration and operational coordination with organized permit workflows, reporting control, field documentation, and practical site-to-office execution.',
     tags: ['Major Overhaul', 'PLTU Kanci', 'HSSE Admin'],
@@ -32,15 +33,19 @@ const items: TimelineItem[] = [
   },
   {
     range: '2015 — 2018',
-    role: 'Project Analyst — PT Sucofindo',
+    role: 'Project Analyst — PT Sucofindo, Cirebon',
+    href: 'https://www.sucofindo.co.id/',
     detail:
-      'Coordinated delivery end-to-end: syncing business needs with execution across product owners, devs, and designers until the output was done and done right.',
+      'Based in Cirebon, coordinated project delivery end-to-end: translating business requirements into execution plans, syncing teams, tracking progress, and keeping documentation aligned until the output was done and done right.',
+    tags: ['Cirebon', 'Project Delivery', 'Documentation'],
   },
   {
     range: '2008 — 2015',
-    role: 'IT Support & Operations — PT Pertamina',
+    role: 'IT Support & Operations — PT. Globalindo Jaya Perdana | TBBM UPMS 3 PT. Pertamina',
+    href: 'https://itbalongan.emansinam.com/',
     detail:
-      '7 years managing IT support and operational systems at enterprise scale — keeping things stable, reliable, and running clean.',
+      'Worked through vendor PT. Globalindo Jaya Perdana at TBBM UPMS 3 PT. Pertamina, supporting IT operations, troubleshooting, user support, and operational systems for a high-reliability fuel terminal environment.',
+    tags: ['Vendor Support', 'TBBM UPMS 3', 'IT Operations'],
   },
 ]
 

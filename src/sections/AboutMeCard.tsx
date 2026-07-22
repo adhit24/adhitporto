@@ -1,5 +1,5 @@
 import { motion, type MotionValue, useTransform } from 'framer-motion'
-import type { ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 
 export type AboutMeCardData = {
   number: string
@@ -30,16 +30,27 @@ export function AboutMeCard({
   const rangeEnd = 1
   const targetScale = 1 - (totalCards - 1 - index) * 0.03
   const scale = useTransform(progress, [rangeStart, rangeEnd], [1, targetScale])
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+    const update = () => setIsDesktop(mediaQuery.matches)
+
+    update()
+    mediaQuery.addEventListener('change', update)
+
+    return () => mediaQuery.removeEventListener('change', update)
+  }, [])
 
   return (
     <div
-      className="sticky top-16 flex min-h-[calc(100svh-4rem)] w-full items-start justify-center sm:top-20 md:top-32 md:min-h-[70vh]"
+      className="relative mb-6 flex w-full items-start justify-center md:sticky md:top-32 md:mb-0 md:h-[70vh]"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
         style={{
-          scale,
-          top: `${index * 28}px`,
+          scale: isDesktop ? scale : 1,
+          top: isDesktop ? `${index * 28}px` : undefined,
           backgroundColor: '#0C0C0C',
           backgroundImage: card.backgroundImage
             ? `linear-gradient(135deg, rgba(12, 12, 12, 0.94), rgba(12, 12, 12, 0.78)), url(${card.backgroundImage})`
@@ -48,7 +59,7 @@ export function AboutMeCard({
           backgroundSize: 'cover',
           willChange: 'transform',
         }}
-        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top overflow-hidden rounded-[30px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="relative inset-x-0 mx-auto w-full max-w-[1760px] origin-top overflow-hidden rounded-[30px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:absolute md:rounded-[60px] md:p-8"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(215,226,234,0.16),transparent_34%),linear-gradient(180deg,rgba(215,226,234,0.08),transparent_42%)]" />
         <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">

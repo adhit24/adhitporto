@@ -1,6 +1,7 @@
 import { FadeIn } from '../components/FadeIn'
 import { ContactButton } from '../components/ContactButton'
 import { Magnet } from '../components/Magnet'
+import { Download } from 'lucide-react'
 
 const portraitUrl = '/avatar.png'
 
@@ -17,7 +18,7 @@ export function HeroSection() {
           About
         </a>
         <a href="#price" className="transition-opacity duration-200 hover:opacity-70">
-          Price
+          Services
         </a>
         <a href="#projects" className="transition-opacity duration-200 hover:opacity-70">
           Projects
@@ -68,10 +69,18 @@ export function HeroSection() {
               as="p"
               className="max-w-[160px] text-[#D7E2EA] [font-size:clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase tracking-wide leading-snug sm:max-w-[220px] md:max-w-[260px]"
             >
-              I build scalable brands, digital systems &amp; meaningful experiences.
+              I build business websites, CRM workflows, and operational systems for brands that need clarity, control, and growth.
             </FadeIn>
 
-            <FadeIn delay={0.5} y={20}>
+            <FadeIn delay={0.5} y={20} className="flex flex-col items-end gap-3 sm:flex-row">
+              <a
+                href="/adhit-nugraha-profile.txt"
+                download
+                className="hidden items-center gap-2 rounded-full border border-[#D7E2EA]/35 px-5 py-3 text-xs font-bold uppercase tracking-widest text-[#D7E2EA] transition-all duration-200 hover:border-[#D7E2EA] hover:bg-[#D7E2EA]/10 sm:inline-flex"
+              >
+                <Download className="h-4 w-4" />
+                Profile
+              </a>
               <ContactButton href="mailto:adhit24@gmail.com" />
             </FadeIn>
           </div>
