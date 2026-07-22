@@ -93,7 +93,40 @@ function TechStackGrid() {
 
 function HowIWorkGrid() {
   return (
-    <div className="flex flex-col gap-3 h-[clamp(240px,34vw,500px)]">
+    <>
+      <div className="grid gap-2 sm:hidden">
+        <div className="h-24 overflow-hidden rounded-[20px] border border-[#D7E2EA]/15 bg-[#141414]">
+          <img
+            src="https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif"
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover object-top"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          {[
+            ['01', 'Build it first'],
+            ['02', 'Ship it'],
+            ['03', 'Bug = Insight'],
+            ['04', 'Iterate Always'],
+          ].map(([number, label]) => (
+            <div
+              key={label}
+              className="min-h-[74px] rounded-[18px] border border-[#D7E2EA]/15 bg-[#141414]/95 p-3"
+            >
+              <div className="text-[10px] font-black uppercase tracking-widest text-[#84B8A6]">
+                {number}
+              </div>
+              <div className="mt-2 text-[12px] font-bold uppercase leading-tight tracking-wide text-[#D7E2EA]">
+                {label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden h-[clamp(240px,34vw,500px)] flex-col gap-3 sm:flex">
       {/* top row */}
       <div className="flex gap-3 flex-1 min-h-0">
         <div className="flex-[3] min-w-0">
@@ -125,7 +158,7 @@ function HowIWorkGrid() {
       {/* bottom row */}
       <div className="flex gap-3 h-[37%] min-h-0">
         <div className="flex-[2] min-w-0 rounded-[22px] bg-[#141414] border border-[#D7E2EA]/15 p-3 sm:p-4 flex items-center gap-2 sm:gap-3">
-          <span className="text-[clamp(1.2rem,2.2vw,2rem)] shrink-0 leading-none">🐛→💡</span>
+          <span className="text-[clamp(1.2rem,2.2vw,2rem)] shrink-0 leading-none">⚠️→💡</span>
           <div>
             <div className="text-[#D7E2EA] font-bold text-[10px] sm:text-xs uppercase tracking-wide">Bug = Insight</div>
             <div className="text-[#D7E2EA]/50 text-[10px] mt-0.5 leading-snug hidden sm:block">no drama, just data</div>
@@ -140,6 +173,7 @@ function HowIWorkGrid() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

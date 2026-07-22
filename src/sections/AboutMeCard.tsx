@@ -33,7 +33,7 @@ export function AboutMeCard({
 
   return (
     <div
-      className="sticky top-24 flex h-[70vh] w-full items-start justify-center md:top-32"
+      className="sticky top-16 flex min-h-[calc(100svh-4rem)] w-full items-start justify-center sm:top-20 md:top-32 md:min-h-[70vh]"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
@@ -48,19 +48,19 @@ export function AboutMeCard({
           backgroundSize: 'cover',
           willChange: 'transform',
         }}
-        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top overflow-hidden rounded-[30px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(215,226,234,0.16),transparent_34%),linear-gradient(180deg,rgba(215,226,234,0.08),transparent_42%)]" />
         <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex items-baseline gap-4">
-            <div className="[font-size:clamp(3rem,10vw,140px)] font-black leading-none text-[#D7E2EA]">
+            <div className="[font-size:clamp(2.6rem,15vw,140px)] font-black leading-none text-[#D7E2EA]">
               {card.number}
             </div>
             <div className="flex flex-col gap-1 pt-2">
               <div className="text-xs font-medium uppercase tracking-widest text-[#D7E2EA]/70">
                 {card.category}
               </div>
-              <div className="text-lg font-medium uppercase tracking-wide text-[#D7E2EA] sm:text-2xl md:text-3xl">
+              <div className="text-base font-medium uppercase tracking-wide text-[#D7E2EA] sm:text-2xl md:text-3xl">
                 {card.name}
               </div>
             </div>
@@ -69,14 +69,14 @@ export function AboutMeCard({
 
         <div className="relative z-10 mt-4 grid gap-4 md:mt-6 md:grid-cols-5 md:gap-6">
           <div className="md:col-span-2">
-            <div className="text-[#D7E2EA] [font-size:clamp(0.95rem,1.5vw,1.2rem)] font-medium leading-relaxed">
+            <div className="text-[#D7E2EA] [font-size:clamp(0.88rem,3.7vw,1.2rem)] font-medium leading-relaxed">
               {card.summary}
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {card.highlights.map((h) => (
                 <span
                   key={h}
-                  className="rounded-full border border-[#D7E2EA]/25 px-3 py-1 text-xs font-medium uppercase tracking-widest text-[#D7E2EA]/85"
+                  className="rounded-full border border-[#D7E2EA]/25 px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-[#D7E2EA]/85 sm:text-xs"
                 >
                   {h}
                 </span>
