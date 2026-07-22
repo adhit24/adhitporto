@@ -31,13 +31,25 @@ const services = [
     description:
       'Operational systems and data workflows that reduce manual work and make the business easier to run.',
   },
+  {
+    number: '06',
+    name: 'Operational Data Control',
+    description:
+      'Structured data control for daily operations: tracking, reporting, validation, and dashboards that help teams make cleaner decisions.',
+  },
+  {
+    number: '07',
+    name: 'HSE Administrative System',
+    description:
+      'HSE document workflows, permit tracking, inspection records, and administrative systems built for clearer compliance and faster coordination.',
+  },
 ]
 
 export function ServicesSection() {
   return (
     <section
       id="price"
-      className="rounded-t-[40px] bg-white px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
+      className="rounded-t-[40px] bg-[#F6F8F5] px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
     >
       <h2 className="mb-16 text-center [font-size:clamp(3rem,12vw,160px)] font-black uppercase text-[#0C0C0C] sm:mb-20 md:mb-28">
         Services
@@ -49,9 +61,9 @@ export function ServicesSection() {
             key={service.number}
             delay={index * 0.1}
             y={30}
-            className="flex gap-6 border-b border-[rgba(12,12,12,0.15)] py-8 sm:py-10 md:py-12"
+            className="group flex gap-6 border-b border-[rgba(12,12,12,0.15)] py-8 transition-colors duration-300 hover:border-[#0C0C0C]/40 sm:py-10 md:py-12"
           >
-            <div className="[font-size:clamp(3rem,10vw,140px)] font-black leading-none text-[#0C0C0C]">
+            <div className="[font-size:clamp(3rem,10vw,140px)] font-black leading-none text-[#0C0C0C] transition-colors duration-300 group-hover:text-[#346C5B]">
               {service.number}
             </div>
 

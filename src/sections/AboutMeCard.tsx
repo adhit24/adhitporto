@@ -12,6 +12,7 @@ export type AboutMeCardData = {
     col2: string
   }
   customImages?: ReactNode
+  backgroundImage?: string
 }
 
 export function AboutMeCard({
@@ -32,7 +33,7 @@ export function AboutMeCard({
 
   return (
     <div
-      className="sticky top-24 flex h-[85vh] w-full items-start justify-center md:top-32"
+      className="sticky top-24 flex h-[70vh] w-full items-start justify-center md:top-32"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
@@ -40,11 +41,17 @@ export function AboutMeCard({
           scale,
           top: `${index * 28}px`,
           backgroundColor: '#0C0C0C',
+          backgroundImage: card.backgroundImage
+            ? `linear-gradient(135deg, rgba(12, 12, 12, 0.94), rgba(12, 12, 12, 0.78)), url(${card.backgroundImage})`
+            : undefined,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
           willChange: 'transform',
         }}
-        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top rounded-[40px] border-2 border-[#D7E2EA] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(215,226,234,0.16),transparent_34%),linear-gradient(180deg,rgba(215,226,234,0.08),transparent_42%)]" />
+        <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex items-baseline gap-4">
             <div className="[font-size:clamp(3rem,10vw,140px)] font-black leading-none text-[#D7E2EA]">
               {card.number}
@@ -60,7 +67,7 @@ export function AboutMeCard({
           </div>
         </div>
 
-        <div className="mt-4 grid gap-4 md:mt-6 md:grid-cols-5 md:gap-6">
+        <div className="relative z-10 mt-4 grid gap-4 md:mt-6 md:grid-cols-5 md:gap-6">
           <div className="md:col-span-2">
             <div className="text-[#D7E2EA] [font-size:clamp(0.95rem,1.5vw,1.2rem)] font-medium leading-relaxed">
               {card.summary}

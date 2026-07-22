@@ -36,9 +36,10 @@ export function ProjectsSection() {
         category: 'Client',
         name: 'Ginabo E-commerce',
         underDevelopment: true,
+        href: 'https://www.ginabo.id/',
         images: {
           col1: ['/logo_diamond.png', '/why-choose-us.png'],
-          col2: '/pr_splash_homepagr.png',
+          col2: '/store_ginabo.png',
         },
       },
       {
@@ -66,12 +67,36 @@ export function ProjectsSection() {
         category: 'Client',
         name: 'Website + Reservation Bilik Kita Coffee & Resto',
         underDevelopment: true,
+        href: 'https://bilik-kita.vercel.app/',
         images: {
           col1: [
             'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80',
             'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
           ],
           col2: 'https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=80',
+        },
+      },
+      {
+        number: '07',
+        category: 'Personal',
+        name: 'Rasakopi New Branch Cirebon',
+        underDevelopment: true,
+        images: {
+          col1: ['/raskop-branch-1.jpg', '/raskop-branch-2.jpg'],
+          col2: '/raskop-branch-3.jpg',
+        },
+      },
+      {
+        number: '08',
+        category: 'Personal',
+        name: 'Healthcare Concept',
+        underDevelopment: true,
+        images: {
+          col1: [
+            '/medvi-style.jpg',
+            'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+          ],
+          col2: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80',
         },
       },
     ],
@@ -82,7 +107,7 @@ export function ProjectsSection() {
     <section
       id="projects"
       ref={containerRef}
-      className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pt-20 pb-24 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
+      className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pt-20 pb-[60vh] md:pb-[20vh] sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
     >
       <h2 className="hero-heading mb-10 text-center [font-size:clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight sm:mb-14 md:mb-20">
         Project

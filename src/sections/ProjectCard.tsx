@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index, totalCards, progress }: Pr
 
   return (
     <div
-      className="sticky top-24 flex h-[85vh] w-full items-start justify-center md:top-32"
+      className="sticky top-24 flex h-[70vh] w-full items-start justify-center md:top-32"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
@@ -36,10 +36,14 @@ export default function ProjectCard({ project, index, totalCards, progress }: Pr
           scale,
           top: `${index * 28}px`,
           backgroundColor: '#0C0C0C',
+          backgroundImage: `linear-gradient(135deg, rgba(12, 12, 12, 0.92), rgba(12, 12, 12, 0.78)), url(${project.images.col2})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
         }}
-        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] origin-top rounded-[40px] border-2 border-[#D7E2EA] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="absolute inset-x-0 mx-auto w-full max-w-[1760px] min-h-[calc(70vh-2rem)] origin-top overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,226,234,0.18),transparent_34%),linear-gradient(180deg,rgba(215,226,234,0.08),transparent_42%)]" />
+        <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="flex items-center gap-6 sm:gap-8 md:gap-10">
             <span
               className="font-black uppercase leading-none text-[#D7E2EA]"
@@ -63,16 +67,19 @@ export default function ProjectCard({ project, index, totalCards, progress }: Pr
             </div>
           </div>
 
-          {project.underDevelopment ? (
-            <span className="inline-flex items-center justify-center rounded-full border-2 border-yellow-400/60 px-8 py-3 text-sm font-medium uppercase tracking-widest text-yellow-400/80 sm:px-10 sm:py-3.5 sm:text-base">
-              Under Development
-            </span>
-          ) : (
-            <LiveProjectButton href={project.href} target="_blank" rel="noreferrer" />
-          )}
+          <div className="flex flex-col items-end gap-2 sm:flex-row sm:items-center sm:gap-3">
+            {project.underDevelopment && (
+              <span className="inline-flex items-center justify-center rounded-full border-2 border-yellow-400/60 px-8 py-3 text-sm font-medium uppercase tracking-widest text-yellow-400/80 sm:px-10 sm:py-3.5 sm:text-base">
+                Under Development
+              </span>
+            )}
+            {project.href && (
+              <LiveProjectButton href={project.href} target="_blank" rel="noreferrer" />
+            )}
+          </div>
         </div>
 
-        <div className="mt-6 flex w-full flex-col gap-4 md:flex-row md:gap-5">
+        <div className="relative z-10 mt-6 flex w-full flex-col gap-4 md:flex-row md:gap-5">
           <div className="flex w-full flex-col gap-4 md:w-[40%] md:gap-5">
             <img
               src={project.images.col1[0]}

@@ -161,6 +161,7 @@ export function AboutMeStackSection() {
         summary:
           "Business operator and digital builder with 15+ years across IT, ops, and data systems. I build scalable brands, digital systems, and meaningful experiences — from the backend to the vibe.",
         highlights: ['Bandung', 'Cirebon', 'UNPAD F.Kom', '15+ yrs'],
+        backgroundImage: '/adhit2.png',
         customImages: <ProfilePhotos />,
       },
       {
@@ -170,6 +171,7 @@ export function AboutMeStackSection() {
         summary:
           "Into business strategy, automation, and digital presence. The goal's simple: less manual grunt work, more real insight, and a customer experience that doesn't feel like a guessing game.",
         highlights: ['Strategy', 'Automation', 'Data', 'UI/UX'],
+        backgroundImage: '/homepage_background.jpg',
         customImages: <TechStackGrid />,
       },
       {
@@ -179,6 +181,7 @@ export function AboutMeStackSection() {
         summary:
           "I keep it pragmatic — fix the foundation, ship a solid v0.9, then iterate. If something breaks, cool. That's data. No drama, just lessons. Done beats perfect — but that doesn't mean sloppy.",
         highlights: ['Lean', 'Iterate', 'Ship', 'Improve'],
+        backgroundImage: '/Project_rasakopi.JPG',
         customImages: <HowIWorkGrid />,
       },
     ],
