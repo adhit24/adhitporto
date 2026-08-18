@@ -73,7 +73,7 @@ export function WorkWithMeSection() {
                     {item.model}
                   </span>
                 </div>
-                <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#0C0C0C]/62 sm:text-base">
+                <p className="mt-4 max-w-xl text-sm font-medium leading-relaxed text-[#263238]/90 sm:text-base">
                   {item.scope}
                 </p>
               </div>
