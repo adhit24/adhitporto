@@ -102,8 +102,8 @@ export function ProjectsSection() {
         built: 'Sistem reservasi otomatis end-to-end dengan admin dashboard untuk mengelola jadwal, pasien, dan alur layanan.',
         result: 'Pengalaman booking lebih profesional, operasional lebih terukur, dan follow-up lebih siap dikembangkan.',
         images: {
-          col1: ['/asset_scroll_animation/atas5.png', '/asset_scroll_animation/atas5.png'],
-          col2: '/asset_scroll_animation/atas5.png',
+          col1: ['/asset_scroll_animation/atas5.png', '/wildan2.png'],
+          col2: '/wildan3.png',
         },
       },
       {

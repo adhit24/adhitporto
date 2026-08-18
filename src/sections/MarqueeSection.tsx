@@ -9,6 +9,18 @@ const topImages = [
 ]
 
 const bottomImages = Array.from({ length: 10 }, (_, index) => `/asset_scroll_animation/bawah${index + 1}.png`)
+const bottomLogoSizes = [
+  'h-[116px] max-w-[210px]',
+  'h-[132px] max-w-[250px]',
+  'h-[104px] max-w-[190px]',
+  'h-[144px] max-w-[270px]',
+  'h-[122px] max-w-[230px]',
+  'h-[136px] max-w-[260px]',
+  'h-[108px] max-w-[200px]',
+  'h-[128px] max-w-[240px]',
+  'h-[112px] max-w-[215px]',
+  'h-[140px] max-w-[265px]',
+]
 
 export function MarqueeSection() {
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -30,7 +42,13 @@ export function MarqueeSection() {
           </motion.div>
           <motion.div style={{ x: bottomX }} className="flex w-max gap-3 will-change-transform">
             {bottomLoop.map((src, index) => (
-              <img key={`${src}-${index}`} src={src} alt="" loading="lazy" className="h-[160px] w-[260px] flex-shrink-0 rounded-2xl object-cover sm:h-[220px] sm:w-[340px] md:h-[270px] md:w-[420px]" />
+              <img
+                key={`${src}-${index}`}
+                src={src}
+                alt=""
+                loading="lazy"
+                className={`${bottomLogoSizes[index % bottomLogoSizes.length]} w-auto flex-shrink-0 rounded-2xl border border-[#D7E2EA]/10 bg-[#121212] p-3 object-contain sm:p-4 md:p-5`}
+              />
             ))}
           </motion.div>
         </div>
