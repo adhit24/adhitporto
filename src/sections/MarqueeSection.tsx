@@ -1,12 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
-// atas8/atas9 belum tersedia di folder asset; fallback menjaga rail tetap utuh
-// sampai file asli ditambahkan dengan nama yang sudah disepakati.
 const topImages = [
   ...Array.from({ length: 7 }, (_, index) => `/asset_scroll_animation/atas${index + 1}.png`),
-  '/asset_scroll_animation/atas7.png',
-  '/asset_scroll_animation/atas10.jpg',
+  '/asset_scroll_animation/atas8.jpg',
+  '/asset_scroll_animation/atas9.jpg',
   '/asset_scroll_animation/atas10.jpg',
 ]
 
