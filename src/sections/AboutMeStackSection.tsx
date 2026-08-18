@@ -6,7 +6,7 @@ import { AboutMeCard, type AboutMeCardData } from './AboutMeCard'
 
 function ProfilePhotos() {
   return (
-    <div className="flex gap-3 sm:gap-4 h-[clamp(280px,38vw,540px)]">
+    <div className="flex h-[clamp(180px,30vh,300px)] gap-3 sm:h-[clamp(280px,38vw,540px)] sm:gap-4">
       <div className="flex flex-[2] flex-col gap-3 sm:gap-4 min-w-0">
         <img
           src="/adhit1.png"
@@ -71,14 +71,14 @@ const techStack: TechItem[] = [
 
 function TechStackGrid() {
   return (
-    <div className="grid grid-cols-4 gap-x-3 gap-y-4 py-2 sm:grid-cols-5 sm:gap-x-4 sm:gap-y-5">
+    <div className="grid grid-cols-5 gap-x-2 gap-y-2 py-1 sm:gap-x-4 sm:gap-y-5 sm:py-2">
       {techStack.map((tech) => (
         <div key={tech.name} className="flex flex-col items-center gap-2">
           <img
             src={tech.icon}
             alt={tech.name}
             loading="lazy"
-            className={`h-[clamp(36px,4.8vw,64px)] w-[clamp(36px,4.8vw,64px)] object-contain drop-shadow-sm${tech.invert ? ' invert' : ''}`}
+            className={`h-[clamp(26px,4.8vw,64px)] w-[clamp(26px,4.8vw,64px)] object-contain drop-shadow-sm${tech.invert ? ' invert' : ''}`}
           />
           <span className="text-[clamp(9px,1.2vw,11px)] font-medium uppercase tracking-wider text-[#D7E2EA]/55 text-center leading-tight">
             {tech.name}

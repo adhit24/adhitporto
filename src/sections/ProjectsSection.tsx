@@ -99,7 +99,7 @@ export function ProjectsSection() {
         category: 'Client',
         name: 'dr. Wildan A. Sutrisno | SpOG · Dokter Kandungan',
         problem: 'Praktik kandungan membutuhkan reservasi yang rapi, cepat, dan mudah dikontrol dari satu pusat operasi.',
-        built: 'Sistem reservasi otomatis end-to-end dengan admin dashboard untuk mengelola jadwal, pasien, dan alur layanan.',
+        built: 'Sistem reservasi otomatis end-to-end dengan admin dashboard dan medical report terintegrasi yang lengkap untuk mencatat, memantau, dan menindaklanjuti data pasien secara rapi.',
         result: 'Pengalaman booking lebih profesional, operasional lebih terukur, dan follow-up lebih siap dikembangkan.',
         images: {
           col1: ['/asset_scroll_animation/atas5.png', '/wildan2.png'],

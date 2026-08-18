@@ -3,7 +3,7 @@ import { ContactButton } from '../components/ContactButton'
 import { Magnet } from '../components/Magnet'
 import { Download } from 'lucide-react'
 
-const portraitUrl = '/avatar.png'
+const portraitUrl = '/avatar_adhit.png'
 
 export function HeroSection() {
   return (

@@ -1,5 +1,4 @@
 import { motion, type MotionValue, useTransform } from 'framer-motion'
-import { useEffect, useState } from 'react'
 import { LiveProjectButton } from '../components/LiveProjectButton'
 
 export interface ProjectData {
@@ -29,33 +28,21 @@ export default function ProjectCard({ project, index, totalCards, progress }: Pr
   const rangeEnd = 1
   const targetScale = 1 - (totalCards - 1 - index) * 0.03
   const scale = useTransform(progress, [rangeStart, rangeEnd], [1, targetScale])
-  const [isDesktop, setIsDesktop] = useState(false)
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)')
-    const update = () => setIsDesktop(mediaQuery.matches)
-
-    update()
-    mediaQuery.addEventListener('change', update)
-
-    return () => mediaQuery.removeEventListener('change', update)
-  }, [])
-
   return (
     <div
-      className="relative mb-6 flex w-full items-start justify-center md:sticky md:top-24 md:mb-0 md:h-[88vh] lg:top-28"
+      className="sticky top-3 relative mb-0 flex h-[calc(100svh-1.5rem)] w-full items-start justify-center md:top-24 md:h-[88vh] lg:top-28"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
         style={{
-          scale: isDesktop ? scale : 1,
-          top: isDesktop ? `${index * 28}px` : undefined,
+          scale,
+          top: 0,
           backgroundColor: '#0C0C0C',
           backgroundImage: `linear-gradient(135deg, rgba(12, 12, 12, 0.92), rgba(12, 12, 12, 0.78)), url(${project.images.col2})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}
-        className="relative inset-x-0 mx-auto w-full max-w-[1760px] origin-top overflow-hidden rounded-[30px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:absolute md:min-h-[calc(88vh-2rem)] md:rounded-[60px] md:p-8"
+        className="absolute inset-x-0 mx-auto h-full w-full max-w-[1760px] origin-top overflow-hidden rounded-[30px] border-2 border-[#D7E2EA] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,226,234,0.18),transparent_34%),linear-gradient(180deg,rgba(215,226,234,0.08),transparent_42%)]" />
         <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
@@ -94,33 +81,33 @@ export default function ProjectCard({ project, index, totalCards, progress }: Pr
           </div>
         </div>
 
-        <div className="relative z-10 mt-6 grid w-full gap-4 lg:grid-cols-[0.95fr_1.25fr] lg:gap-5">
-          <div className="flex w-full flex-col gap-4 md:gap-5">
+        <div className="relative z-10 mt-3 grid w-full grid-cols-2 gap-3 sm:mt-6 sm:gap-4 lg:grid-cols-[0.95fr_1.25fr] lg:gap-5">
+          <div className="col-span-2 grid w-full grid-cols-2 gap-3 lg:col-span-1 lg:flex lg:flex-col lg:gap-5">
             <img
               src={project.images.col1[0]}
               alt={`${project.name} preview 1`}
               className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
+              style={{ height: 'clamp(72px, 13vw, 230px)' }}
               loading="lazy"
             />
             <img
               src={project.images.col1[1]}
               alt={`${project.name} preview 2`}
               className="w-full rounded-[30px] object-cover sm:rounded-[40px] md:rounded-[60px]"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
+              style={{ height: 'clamp(86px, 17vw, 340px)' }}
               loading="lazy"
             />
           </div>
 
-          <div className="grid gap-4 lg:grid-rows-[1fr_auto]">
+          <div className="col-span-2 grid gap-3 lg:col-span-1 lg:grid-rows-[1fr_auto] lg:gap-4">
             <img
               src={project.images.col2}
               alt={`${project.name} main`}
-              className="h-[220px] w-full rounded-[30px] object-cover sm:h-[280px] sm:rounded-[40px] lg:h-full lg:min-h-[260px] lg:self-stretch lg:rounded-[60px]"
+              className="h-[126px] w-full rounded-[30px] object-cover sm:h-[180px] sm:rounded-[40px] lg:h-full lg:min-h-[260px] lg:self-stretch lg:rounded-[60px]"
               loading="lazy"
             />
 
-            <div className="grid gap-2 rounded-[24px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/72 p-4 backdrop-blur-sm sm:grid-cols-3 sm:gap-3 sm:rounded-[32px]">
+            <div className="grid grid-cols-1 gap-2 rounded-[24px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/72 p-3 backdrop-blur-sm sm:grid-cols-3 sm:gap-3 sm:rounded-[32px] sm:p-4">
               {[
                 ['Problem', project.problem],
                 ['Built', project.built],
