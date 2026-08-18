@@ -97,7 +97,7 @@ function HowIWorkGrid() {
       <div className="grid gap-2 sm:hidden">
         <div className="h-24 overflow-hidden rounded-[20px] border border-[#D7E2EA]/15 bg-[#141414]">
           <img
-            src="https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif"
+            src="/redbox.png"
             alt=""
             loading="lazy"
             className="h-full w-full object-cover object-top"
@@ -131,7 +131,7 @@ function HowIWorkGrid() {
       <div className="flex gap-3 flex-1 min-h-0">
         <div className="flex-[3] min-w-0">
           <img
-            src="https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif"
+            src="/redbox.png"
             alt=""
             loading="lazy"
             className="h-full w-full rounded-[28px] object-cover sm:rounded-[36px] md:rounded-[44px]"

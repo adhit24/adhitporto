@@ -13,7 +13,7 @@ const engagementTypes = [
     model: 'System build',
   },
   {
-    name: 'HSE Administrative System',
+    name: 'HSSE Administrative System',
     scope: 'Permit tracking, inspection records, document control, and field reporting support.',
     model: 'Project support',
   },

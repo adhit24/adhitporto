@@ -12,7 +12,7 @@ const items: TimelineItem[] = [
   {
     range: '2026',
     role: 'General Skill — HSSE Department, PT. Koin Pratama',
-    href: 'http://www.ptkoin.com/en/koin.html',
+    href: 'https://www.ptkoin.com/en/koin.html',
     detail:
       'Assigned to the Major Overhaul PLTU Kanci project, supporting HSSE administration and operational coordination with organized permit workflows, reporting control, field documentation, and practical site-to-office execution.',
     tags: ['Major Overhaul', 'PLTU Kanci', 'HSSE Admin'],
@@ -22,14 +22,14 @@ const items: TimelineItem[] = [
     role: 'Founder — Kinaryaloka Digital Studio',
     href: 'https://www.kinaryaloka.com/',
     detail:
-      `ok so real talk — it's 2020, the whole world pressed pause, everyone's having an existential crisis, and my brain said "bet, let's start a digital agency." 💀 classic me. built Kinaryaloka to help local businesses not die during COVID — bc apparently while everyone was panic-buying toilet paper, i was out here digitizing studios and SMEs. chaos? absolutely. regrets? zero. accidentally helpful? very much yes. 🫡`,
+      'Founded Kinaryaloka during the 2020 disruption to help local businesses move their presence and customer touchpoints into digital channels. Built practical websites and digital foundations for SMEs.',
   },
   {
     range: '2019 — Present',
     role: 'Founder & Business Owner — Rasa Kopi',
     href: 'https://raskop.net',
     detail:
-      `I built a coffee brand from zero, mostly powered by caffeine, chaos, and "nanti juga jadi" mindset. I handle operations, CRM, digital presence, and customer experience—aka being the guy who fixes everything from broken systems to broken vibes. If something runs smoothly, I pretend it was planned. If it breaks, I call it "customer insight research."`,
+      'Built Rasa Kopi from the ground up and continue to lead operations, CRM, digital presence, and customer experience across the business. The brand is also a live laboratory for testing systems in the real world.',
   },
   {
     range: '2015 — 2018',

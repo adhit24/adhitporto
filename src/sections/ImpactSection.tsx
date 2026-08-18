@@ -10,7 +10,7 @@ const stats = [
   {
     value: '8+',
     label: 'Digital Projects',
-    description: 'Websites, CRM flows, brand pages, reservation concepts, and operational tools.',
+    description: 'Websites, booking flows, CRM systems, brand pages, and operational tools.',
   },
   {
     value: '4',

@@ -39,7 +39,7 @@ const services = [
   },
   {
     number: '07',
-    name: 'HSE Administrative System',
+    name: 'HSSE Administrative System',
     description:
       'HSE document workflows, permit tracking, inspection records, and administrative systems built for clearer compliance and faster coordination.',
   },
@@ -48,7 +48,7 @@ const services = [
 export function ServicesSection() {
   return (
     <section
-      id="price"
+      id="services"
       className="rounded-t-[40px] bg-[#F6F8F5] px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
     >
       <h2 className="mb-16 text-center [font-size:clamp(3rem,12vw,160px)] font-black uppercase text-[#0C0C0C] sm:mb-20 md:mb-28">

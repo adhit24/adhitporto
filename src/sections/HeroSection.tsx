@@ -12,12 +12,13 @@ export function HeroSection() {
         as="nav"
         delay={0}
         y={-20}
+        aria-label="Primary navigation"
         className="flex items-center justify-between px-6 pt-6 text-sm font-medium uppercase tracking-wider text-[#D7E2EA] sm:text-base md:px-10 md:pt-8 md:text-lg lg:text-[1.4rem]"
       >
         <a href="#about" className="transition-opacity duration-200 hover:opacity-70">
           About
         </a>
-        <a href="#price" className="transition-opacity duration-200 hover:opacity-70">
+        <a href="#services" className="transition-opacity duration-200 hover:opacity-70">
           Services
         </a>
         <a href="#projects" className="transition-opacity duration-200 hover:opacity-70">
@@ -34,7 +35,7 @@ export function HeroSection() {
       <div className="relative flex flex-1 flex-col">
         <FadeIn delay={0.15} y={40} className="mt-6 w-full overflow-hidden sm:mt-4 md:-mt-5">
           <h1 className="hero-heading w-full whitespace-nowrap text-[14vw] font-black uppercase leading-none tracking-tight sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]">
-            Hi, i&apos;m adhit
+            Hi, I&apos;m Adhit
           </h1>
         </FadeIn>
 

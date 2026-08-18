@@ -15,9 +15,9 @@ export function ProjectsSection() {
         number: '01',
         category: 'Client',
         name: 'Website RedBox',
-        problem: 'Needed a sharper online presence for barbershop discovery and trust.',
-        built: 'Responsive brand website with service-focused layout and direct contact flow.',
-        result: 'Clearer first impression and easier path from browsing to booking intent.',
+        problem: 'Needed a clearer customer journey across discovery, branch availability, and booking intent.',
+        built: 'Customer-facing website and booking foundation connected to branch, membership, notification, and operational workflows.',
+        result: 'A stronger digital front door with clearer booking authority and a foundation for measurable growth.',
         href: 'https://www.redboxbarbershop.com/',
         images: {
           col1: ['/redbox1st.png', '/redbok_LP.png'],
@@ -134,7 +134,7 @@ export function ProjectsSection() {
       className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pt-20 pb-24 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pb-[90vh]"
     >
       <h2 className="hero-heading mb-10 text-center [font-size:clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight sm:mb-14 md:mb-20">
-        Project
+        Projects
       </h2>
 
       <div className="relative mx-auto w-full max-w-[1760px]">

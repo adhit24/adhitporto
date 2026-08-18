@@ -3,8 +3,8 @@ import { Mail, Linkedin, Instagram, Github, MessageCircle } from 'lucide-react'
 import { FadeIn } from '../components/FadeIn'
 
 const socialLinks = [
-  { icon: Linkedin,  href: 'https://linkedin.com/in/adhitya-nugraha', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://instagram.com/adhit24',            label: 'Instagram' },
+  { icon: Linkedin,  href: 'https://linkedin.com/in/adhit-ops-specialist', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://instagram.com/adhitnugrha',            label: 'Instagram' },
   { icon: Mail,      href: 'mailto:adhit24@gmail.com',                 label: 'Email' },
   { icon: Github,    href: 'https://github.com/adhit24',               label: 'GitHub' },
   { icon: MessageCircle, href: 'https://wa.me/6281357662424',                label: 'WhatsApp' },
