@@ -1,84 +1,40 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 
-const projectImages = [
-  '/redbox.png', '/redbox1st.png', '/redbok_LP.png', '/raskopfront.png',
-  '/Project_rasakopi.JPG', '/DSCF5975.JPG', '/store_ginabo.png', '/why-choose-us.png',
-  '/oksi4.jpg', '/belly2.jpg', '/raskop-branch-3.jpg', '/medvi-style.jpg',
+// atas8/atas9 belum tersedia di folder asset; fallback menjaga rail tetap utuh
+// sampai file asli ditambahkan dengan nama yang sudah disepakati.
+const topImages = [
+  ...Array.from({ length: 7 }, (_, index) => `/asset_scroll_animation/atas${index + 1}.png`),
+  '/asset_scroll_animation/atas7.png',
+  '/asset_scroll_animation/atas10.jpg',
+  '/asset_scroll_animation/atas10.jpg',
 ]
+
+const bottomImages = Array.from({ length: 10 }, (_, index) => `/asset_scroll_animation/bawah${index + 1}.png`)
 
 export function MarqueeSection() {
   const sectionRef = useRef<HTMLElement | null>(null)
-  const rafId = useRef<number | null>(null)
-  const [offset, setOffset] = useState(0)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] })
+  const topX = useTransform(scrollYProgress, [0, 1], ['0%', '-38%'])
+  const bottomX = useTransform(scrollYProgress, [0, 1], ['-32%', '0%'])
 
-  const row1 = useMemo(() => projectImages.slice(0, 6), [])
-  const row2 = useMemo(() => projectImages.slice(6), [])
-  const row1Loop = useMemo(() => [...row1, ...row1, ...row1], [row1])
-  const row2Loop = useMemo(() => [...row2, ...row2, ...row2], [row2])
-
-  useEffect(() => {
-    const update = () => {
-      const section = sectionRef.current
-      if (!section) return
-      const rect = section.getBoundingClientRect()
-      const sectionTop = rect.top + window.scrollY
-      const nextOffset = (window.scrollY - sectionTop + window.innerHeight) * 0.3
-      setOffset(nextOffset)
-    }
-
-    const onScroll = () => {
-      if (rafId.current !== null) return
-      rafId.current = window.requestAnimationFrame(() => {
-        rafId.current = null
-        update()
-      })
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    update()
-
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      if (rafId.current !== null) window.cancelAnimationFrame(rafId.current)
-    }
-  }, [])
+  const topLoop = [...topImages, ...topImages]
+  const bottomLoop = [...bottomImages, ...bottomImages]
 
   return (
-    <section ref={sectionRef} className="bg-[#0C0C0C] overflow-hidden pt-16 pb-10 sm:pt-32 md:pt-40">
-      <div className="flex flex-col gap-3 overflow-hidden">
-        <div
-          className="flex gap-3"
-          style={{
-            transform: `translate3d(${offset - 200}px, 0, 0)`,
-            willChange: 'transform',
-          }}
-        >
-          {row1Loop.map((src, index) => (
-            <img
-              key={`${src}-${index}`}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="h-[160px] w-[260px] flex-shrink-0 rounded-2xl object-cover sm:h-[220px] sm:w-[340px] md:h-[270px] md:w-[420px]"
-            />
-          ))}
-        </div>
-        <div
-          className="flex gap-3"
-          style={{
-            transform: `translate3d(${-(offset - 200)}px, 0, 0)`,
-            willChange: 'transform',
-          }}
-        >
-          {row2Loop.map((src, index) => (
-            <img
-              key={`${src}-${index}`}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="h-[160px] w-[260px] flex-shrink-0 rounded-2xl object-cover sm:h-[220px] sm:w-[340px] md:h-[270px] md:w-[420px]"
-            />
-          ))}
+    <section ref={sectionRef} className="relative h-[190vh] bg-[#0C0C0C]">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden py-16 sm:py-24 md:py-32">
+        <div className="flex w-full flex-col gap-3">
+          <motion.div style={{ x: topX }} className="flex w-max gap-3 will-change-transform">
+            {topLoop.map((src, index) => (
+              <img key={`${src}-${index}`} src={src} alt="" loading="lazy" className="h-[160px] w-[260px] flex-shrink-0 rounded-2xl object-cover sm:h-[220px] sm:w-[340px] md:h-[270px] md:w-[420px]" />
+            ))}
+          </motion.div>
+          <motion.div style={{ x: bottomX }} className="flex w-max gap-3 will-change-transform">
+            {bottomLoop.map((src, index) => (
+              <img key={`${src}-${index}`} src={src} alt="" loading="lazy" className="h-[160px] w-[260px] flex-shrink-0 rounded-2xl object-cover sm:h-[220px] sm:w-[340px] md:h-[270px] md:w-[420px]" />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

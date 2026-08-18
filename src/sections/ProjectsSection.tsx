@@ -96,6 +96,18 @@ export function ProjectsSection() {
       },
       {
         number: '07',
+        category: 'Client',
+        name: 'dr. Wildan A. Sutrisno | SpOG · Dokter Kandungan',
+        problem: 'Praktik kandungan membutuhkan reservasi yang rapi, cepat, dan mudah dikontrol dari satu pusat operasi.',
+        built: 'Sistem reservasi otomatis end-to-end dengan admin dashboard untuk mengelola jadwal, pasien, dan alur layanan.',
+        result: 'Pengalaman booking lebih profesional, operasional lebih terukur, dan follow-up lebih siap dikembangkan.',
+        images: {
+          col1: ['/asset_scroll_animation/atas5.png', '/asset_scroll_animation/atas5.png'],
+          col2: '/asset_scroll_animation/atas5.png',
+        },
+      },
+      {
+        number: '08',
         category: 'Personal',
         name: 'Rasakopi New Branch Cirebon',
         problem: 'New branch planning needed visual direction and operational framing.',
@@ -108,7 +120,7 @@ export function ProjectsSection() {
         },
       },
       {
-        number: '08',
+        number: '09',
         category: 'Personal',
         name: 'Healthcare Concept',
         problem: 'Healthcare service concept needed a clean and trustworthy digital direction.',
