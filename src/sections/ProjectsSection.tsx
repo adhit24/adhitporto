@@ -20,8 +20,9 @@ export function ProjectsSection() {
         result: 'A stronger digital front door with clearer booking authority and a foundation for measurable growth.',
         href: 'https://www.redboxbarbershop.com/',
         images: {
-          col1: ['/redbox1st.png', '/redbok_LP.png'],
+          col1: ['/asset_scroll_animation/atas1.png', '/redbok_LP.png'],
           col2: '/redbox.png',
+          hideSecondaryImage: true,
         },
       },
       {
@@ -101,6 +102,8 @@ export function ProjectsSection() {
         problem: 'Praktik kandungan membutuhkan reservasi yang rapi, cepat, dan mudah dikontrol dari satu pusat operasi.',
         built: 'Sistem reservasi otomatis end-to-end dengan admin dashboard dan medical report terintegrasi yang lengkap untuk mencatat, memantau, dan menindaklanjuti data pasien secara rapi.',
         result: 'Pengalaman booking lebih profesional, operasional lebih terukur, dan follow-up lebih siap dikembangkan.',
+        href: 'https://klinik-apotek-keluarga.vercel.app/',
+        underDevelopment: true,
         images: {
           col1: ['/asset_scroll_animation/atas5.png', '/wildan2.png'],
           col2: '/wildan3.png',

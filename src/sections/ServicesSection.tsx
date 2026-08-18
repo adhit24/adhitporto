@@ -65,7 +65,7 @@ function ServiceCard({ service, index, progress }: { service: (typeof services)[
   return (
     <motion.article
       style={{ y, rotate, scale, zIndex: services.length - index, top: index * 14 }}
-      className="absolute inset-x-0 flex h-full flex-col justify-between overflow-hidden rounded-[28px] border border-[#D7E2EA]/30 bg-[#111515] p-6 text-[#D7E2EA] shadow-[0_28px_80px_rgba(12,12,12,0.22)] sm:rounded-[38px] sm:p-9 md:rounded-[48px] md:p-12"
+      className="absolute inset-x-0 flex h-full flex-col justify-between overflow-hidden rounded-[28px] border border-[#D7E2EA]/30 bg-[#111515] p-5 text-[#D7E2EA] shadow-[0_28px_80px_rgba(12,12,12,0.22)] sm:rounded-[38px] sm:p-8 md:rounded-[48px] md:p-10"
     >
       <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full blur-3xl" style={{ background: `${service.accent}24` }} />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(215,226,234,0.12),transparent_30%),linear-gradient(135deg,rgba(52,108,91,0.18),transparent_52%)]" />
@@ -79,8 +79,8 @@ function ServiceCard({ service, index, progress }: { service: (typeof services)[
       </div>
 
       <div className="relative max-w-3xl">
-        <h3 className="max-w-2xl text-[clamp(1.7rem,5vw,4.8rem)] font-medium uppercase leading-[0.95] tracking-tight text-[#F6F8F5]">{service.name}</h3>
-        <p className="mt-4 max-w-2xl text-[clamp(0.95rem,1.8vw,1.35rem)] leading-relaxed text-[#D7E2EA]/72 sm:mt-6">{service.description}</p>
+        <h3 className="max-w-2xl text-[clamp(1.7rem,5vw,4.8rem)] font-medium uppercase leading-[0.95] tracking-tight text-[#F6F8F5] md:text-[clamp(1.8rem,3.2vw,3.5rem)]">{service.name}</h3>
+        <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.8vw,1.25rem)] leading-relaxed text-[#D7E2EA]/72 sm:mt-5 md:text-[clamp(0.9rem,1.25vw,1.1rem)]">{service.description}</p>
         <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#84B8A6] sm:mt-8 sm:text-sm">
           <span>Build with intent</span>
           <ArrowUpRight size={16} aria-hidden="true" />
@@ -115,7 +115,7 @@ export function ServicesSection() {
             </div>
           </div>
 
-          <div className="relative h-[min(62vh,590px)] min-h-[390px] w-full [perspective:1200px] sm:h-[min(64vh,620px)]">
+          <div className="relative h-[min(62vh,590px)] min-h-[320px] w-full [perspective:1200px] sm:h-[min(64vh,620px)]">
             {services.map((service, index) => <ServiceCard key={service.number} service={service} index={index} progress={scrollYProgress} />)}
           </div>
 

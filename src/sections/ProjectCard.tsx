@@ -10,6 +10,7 @@ export interface ProjectData {
   result: string
   href?: string
   underDevelopment?: boolean
+  hideSecondaryImage?: boolean
   images: {
     col1: string[]
     col2: string
@@ -86,17 +87,19 @@ export default function ProjectCard({ project, index, totalCards, progress }: Pr
             <img
               src={project.images.col1[0]}
               alt={`${project.name} preview 1`}
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(72px, 13vw, 230px)' }}
+              className={`w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px] ${project.hideSecondaryImage ? 'col-span-2 h-[180px] sm:h-[280px] lg:col-span-1 lg:h-full lg:min-h-[260px]' : ''}`}
+              style={project.hideSecondaryImage ? undefined : { height: 'clamp(72px, 13vw, 230px)' }}
               loading="lazy"
             />
-            <img
-              src={project.images.col1[1]}
-              alt={`${project.name} preview 2`}
-              className="w-full rounded-[30px] object-cover sm:rounded-[40px] md:rounded-[60px]"
-              style={{ height: 'clamp(86px, 17vw, 340px)' }}
-              loading="lazy"
-            />
+            {!project.hideSecondaryImage && (
+              <img
+                src={project.images.col1[1]}
+                alt={`${project.name} preview 2`}
+                className="w-full rounded-[30px] object-cover sm:rounded-[40px] md:rounded-[60px]"
+                style={{ height: 'clamp(86px, 17vw, 340px)' }}
+                loading="lazy"
+              />
+            )}
           </div>
 
           <div className="col-span-2 grid gap-3 lg:col-span-1 lg:grid-rows-[1fr_auto] lg:gap-4">
